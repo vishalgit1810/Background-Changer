@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background changer</title>
+    <style>
+        body{
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+           padding: 20px 100px;
+           margin: 0px;
+        }
+        h1{
+            text-align : center;
+            text-decoration: underline;
+        }
+        img{            
+            width: 45%;
+            height: 45%;            
+            padding-left: 300px;           
+        }
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
+        #white{
+            background-color: #cd853f;
+        }
+        #black{
+            background-color: black;
+        }
+        #aqua{
+            background-color: aqua;
+        }
+        #violet{
+            background-color: violet;
+        }
+        #random{
+            border: solid rgba(0, 0, 0, 0.5) 2px;
+            cursor: pointer;
+        }
+
+        #switch {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.btn {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    border: solid rgba(0, 0, 0, 0.5) 2px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#random {
+    border: solid rgba(0, 0, 0, 0.5) 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #fff;
+    margin-left: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#random:hover {
+    background-color: #ff7e5f;
+    color: #fff;
+}
+       
+    </style>
+
+</head>
+<body>
+    <div id="switch">
+        <span class="btn" id="white" onclick='changecolor1("#cd853f")'></span>
+        <span class="btn" id="aqua" onclick='changecolor1("#7fffd4")'></span>
+        <span class="btn" id="violet" onclick='changecolor1("#ce9aff")'></span>
+        <span class="btn" id="black" onclick='changecolor1("#000000")'></span>
+        <button id="random" onclick="getRandomColor()">random</button>
+    </div>
+    <h1 class="text">About Me</h1>
+    <img src="https://img.freepik.com/free-vector/organic-flat-about-me-concept-illustrated_23-2148909309.jpg?t=st=1716484570~exp=1716488170~hmac=c01d6550af9111889e5b1fab7e5ad818d9dd9de63223f90c3f35bb966522abac&w=740" alt="Image-of-Auther"/>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor veritatis illum, fugiat minima obcaecati repudiandae a consectetur ad ut possimus eveniet temporibus assumenda exercitationem dolores? Quisquam quis, itaque nostrum at delectus quod quidem corporis assumenda pariatur porro architecto veritatis, quas iusto. Deserunt aut labore id voluptates dolorem autem facere, ad quisquam. Esse iure porro eius temporibus quo non repudiandae earum voluptas? Totam et accusantium exercitationem saepe magni placeat, vero eos inventore error qui rerum quia sunt architecto est voluptate adipisci voluptatibus praesentium nobis dolor aliquid, voluptas eligendi commodi ipsam! Qui accusantium quibusdam atque deleniti sunt autem, velit animi incidunt corporis ab et perspiciatis dolor quam aliquid ut corrupti libero magnam deserunt illum suscipit ex tempora. Commodi deserunt itaque reprehenderit facilis corporis, dolorem illum quas odio molestiae placeat dolorum consequatur optio? Officiis, in eveniet voluptatem facilis maxime hic nihil magnam veritatis unde? Iste beatae aut repudiandae dignissimos suscipit. Accusantium blanditiis magnam illo labore quibusdam laboriosam omnis vel doloribus voluptate eaque, ratione, facere sequi iure incidunt? Iste totam pariatur repellendus corporis hic similique eveniet, illum nisi quae rerum sequi eaque accusamus repudiandae omnis, earum molestiae autem labore quo consectetur ratione. Accusamus, fugit. Obcaecati, aspernatur! Mollitia dignissimos atque quod fugit et, minima quasi.</p>
+  
+    <script>
+        function changecolor1(colorName){
+            if(colorName == "#000000"){
+                let nodeList = document.querySelectorAll(".text");
+                nodeList[0].style.color = "white";
+                nodeList[1].style.color = "white";
+            }
+            document.body.style.backgroundColor = colorName;
+        }
+        function getRandomColor(){
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+
+            document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }
+
+    </script>
+</body>
+</html>
